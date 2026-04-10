@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Snake Game</h1>
+        <div class="box">Score: <span id="score">0</span></div>
+        <div class="box">Best: <span id="high-score">0</span></div>
+    </div>
+
+    <div class="game">
+        <div id="board"></div>
+        <div id="overlay">
+            <h2 id="overlay-title">Start Game</h2>
+            <p id="overlay-desc">Use Arrow Keys to move</p>
+            <button id="start-btn" onclick="initGame()">Play Now</button>
+        </div>
+    </div>
+
+    <div class="control">
+        <span> Arrow keys to move 
+            <span class="key">↑</span> 
+            <span class="key">↓</span> 
+            <span class="key">←</span> 
+            <span class="key">→</span>
+            · Eat the red food to grow
+        </span>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

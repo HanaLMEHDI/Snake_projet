@@ -1,0 +1,191 @@
+ :root {
+     --bg-color: ;
+     --board-bg: ;
+     --text-color: #f8fafc;
+ }
+
+ body {
+     margin: 0;
+     padding: 0;
+     /*min-height: 100vh;*/
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     /*background: linear-gradient(135deg, #fff, #1e1b4b);*/
+     font-family: "Saira Stencil", sans-serif;
+     color: var(--text-color);
+     overflow: hidden;
+ }
+
+ h1 {
+     font-size: 28px;
+     margin: 10px 50px 10px 0;
+     /*background: linear-gradient(to right, #34d399, #3b82f6);*/
+     text-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+     letter-spacing: 2px;
+ }
+
+ .header {
+     display: flex;
+     gap: 30px;
+     margin-bottom: 20px;
+     margin-top: 20px;
+     font-size: 24px;
+     font-weight: 700;
+     color: #000;
+ }
+
+ .box {
+     /*background: rgba(255, 255, 255, 0.05);*/
+     padding: 12px 25px;
+     border-radius: 12px;
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     backdrop-filter: blur(10px);
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+
+ #score,
+ #high-score {
+     color: #34d399;
+     font-size: 24px;
+     margin-left: 5px;
+ }
+
+ .game {
+     position: relative;
+     padding: 15px;
+     background: rgba(255, 255, 255, 0.03);
+     border-radius: 20px;
+     border: 1px solid rgba(255, 255, 255, 0.05);
+     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+     backdrop-filter: blur(10px);
+ }
+
+ #board {
+     display: grid;
+     grid-template-columns: repeat(20, 20px);
+     grid-template-rows: repeat(20, 20px);
+     gap: 2px;
+     background-color: var(--board-bg);
+     border-radius: 12px;
+     padding: 4px;
+ }
+
+ .cell {
+     width: 20px;
+     height: 20px;
+     background-color: rgba(0, 0, 0, 0.2);
+     border-radius: 4px;
+     transition: background-color 0.1s ease;
+ }
+
+
+ .snake {
+     background-color: #34d399;
+     box-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
+     border-radius: 6px;
+     transform: scale(0.9);
+ }
+
+ .snake-head {
+     background-color: #10b981;
+     box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+     border-radius: 8px;
+     z-index: 2;
+     transform: scale(1);
+ }
+
+ /* Food Styling with heartbeat pulsing animation */
+ .food {
+     background-color: #ef4444;
+     box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+     border-radius: 50%;
+     transform: scale(1.1);
+     animation: pulse 1.5s infinite alternate;
+ }
+
+ @keyframes pulse {
+     0% {
+         transform: scale(0.7);
+         box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+     }
+
+     100% {
+         transform: scale(0.9);
+         box-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
+     }
+ }
+
+ #overlay {
+     display: flex;
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: rgba(15, 23, 42, 0.85);
+     backdrop-filter: blur(5px);
+     border-radius: 20px;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     z-index: 10;
+ }
+
+ #overlay h2 {
+     font-size: 2.5rem;
+     margin: 0 0 15px 0;
+     color: #ef4444;
+     text-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+ }
+
+ #overlay-desc {
+     margin-bottom: 25px;
+     color: #94a3b8;
+     font-size: 1.1rem;
+ }
+
+ .hidden {
+     display: none !important;
+ }
+
+ button {
+     padding: 12px 30px;
+     font-size: 1.2rem;
+     font-weight: 600;
+     font-family: 'Outfit', sans-serif;
+     color: white;
+     background: linear-gradient(135deg, #3b82f6, #2563eb);
+     border: none;
+     border-radius: 10px;
+     cursor: pointer;
+     transition: all 0.2s ease;
+     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+ }
+
+ button:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+     background: linear-gradient(135deg, #60a5fa, #3b82f6);
+ }
+
+ button:active {
+     transform: translateY(1px);
+ }
+
+ .control {
+     margin-top: 30px;
+     font-size: 0.9rem;
+     color: #000;
+     display: flex;
+     gap: 15px;
+ }
+
+ .key {
+     background: rgba(255, 255, 255, 0.1);
+     padding: 4px 10px;
+     border-radius: 6px;
+     border: 1px solid rgba(255, 255, 255, 0.2);
+     color: #000;
+ }
