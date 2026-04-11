@@ -14,7 +14,7 @@
         let score = 0;
         let highScore = localStorage.getItem('HighScore') || 0;
         let gameInterval;
-        let speed = 4000;
+        let speed = 10000;
         
         highScoreEl.innerText = highScore;
 
